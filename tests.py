@@ -4,7 +4,7 @@ from app import xml_to_custom_language as app
 
 class TestApp(unittest.TestCase):
 
-
+# тесттировние основных функций
     def test_array(self):
         xml = """
         <root>
@@ -34,6 +34,12 @@ class TestApp(unittest.TestCase):
         expected = "const PI = 3.14;"
         self.assertEqual(app(xml), expected)
     
+    def test_comment(self):
+        xml = "<root><comment>hello</comment></root>"
+        expected = "{#\n hello\n#}"
+        self.assertEqual(app(xml), expected)
+        
+# тест ошибок
     def test_unknown_element(self):
         xml = "<root><unknown>...</unknown></root>"
         with self.assertRaises(ValueError):
