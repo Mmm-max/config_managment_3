@@ -1,0 +1,13 @@
+<root>
+    <array>
+        <value>10</value>
+        <value>20</value>
+        <value>30</value>
+    </array>
+    <dictionary>
+        <entry name="key1">value1</entry>
+        <entry name="key2">value2</entry>
+    </dictionary>
+    <string>Hello World</string>
+    <constant name="PI">3.14</constant>
+</root>
