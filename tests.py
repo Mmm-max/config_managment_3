@@ -38,6 +38,11 @@ class TestApp(unittest.TestCase):
         xml = "<root><comment>hello</comment></root>"
         expected = "{#\n hello\n#}"
         self.assertEqual(app(xml), expected)
+    
+    def test_compute(self):
+        xml = "<root><compute><name>result</name></compute></root>"
+        expected = "?result"
+        self.assertEqual(app(xml), expected)
         
 # тест ошибок
     def test_unknown_element(self):

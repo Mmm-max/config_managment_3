@@ -21,6 +21,8 @@ def process_element(elem):
         return process_constant(elem)
     elif elem.tag == "comment":
         return process_comment(elem)
+    elif elem.tag == "compute":
+        return process_compute(elem)
     else:
         raise ValueError(f"Unknown XML element: {elem.tag}")
 
@@ -43,6 +45,10 @@ def process_constant(elem):
 
 def process_comment(elem):
     return f"{{#\n {elem.text}\n#}}"
+
+def process_compute(elem):
+    name = elem.find("name").text
+    return f"?{name}"
 
 def main():
     if len(sys.argv) != 2:

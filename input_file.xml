@@ -15,4 +15,7 @@
     </dictionary>
     <string>Hello World</string>
     <constant name="PI">3.14</constant>
+    <compute>
+        <name>PI</name>
+    </compute>
 </root>
