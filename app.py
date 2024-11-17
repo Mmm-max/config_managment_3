@@ -10,7 +10,7 @@ def xml_to_custom_language(xml_string):
         raise ValueError(f"Invalid XML: {e}")
 
 def process_element(elem):
-    print(elem.tag)
+    # print(elem.tag)
     if elem.tag == "array":
         return process_array(elem)
     elif elem.tag == "dictionary":
